@@ -62,7 +62,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
 
         root_dir = Path(imap_l3_processing.__file__).parent.parent
         os.chdir(root_dir)
-        imap_data_access.config["DATA_DIR"] = root_dir / "data"
+        data_dir = root_dir / "data"
+        imap_data_access.config["DATA_DIR"] = data_dir
 
         dependency_filename = "imap_swapi_l3a_proton-sw_20260101_v001.json"
         stage_input_file(SWAPI_INTEGRATION_DATA_DIR / dependency_filename)
@@ -83,7 +84,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
                 "--start-date", "20260101",
                 "--version", "v001",
                 "--dependency", dependency_filename,
-            ]
+            ],
+            env={**os.environ, "IMAP_DATA_DIR": str(data_dir)},
         )
 
         self.assertEqual(0, result.returncode)
@@ -146,7 +148,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
 
         root_dir = Path(imap_l3_processing.__file__).parent.parent
         os.chdir(root_dir)
-        imap_data_access.config["DATA_DIR"] = root_dir / "data"
+        data_dir = root_dir / "data"
+        imap_data_access.config["DATA_DIR"] = data_dir
 
         dependency_filename = "imap_swapi_l3a_alpha-sw_20260101_v001.json"
         stage_input_file(SWAPI_INTEGRATION_DATA_DIR / dependency_filename)
@@ -167,7 +170,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
                 "--start-date", "20260101",
                 "--version", "v001",
                 "--dependency", dependency_filename,
-            ]
+            ],
+            env={**os.environ, "IMAP_DATA_DIR": str(data_dir)},
         )
 
         self.assertEqual(0, result.returncode)
@@ -221,7 +225,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
 
         root_dir = Path(imap_l3_processing.__file__).parent.parent
         os.chdir(root_dir)
-        imap_data_access.config["DATA_DIR"] = root_dir / "data"
+        data_dir = root_dir / "data"
+        imap_data_access.config["DATA_DIR"] = data_dir
 
         dependency_filename = "imap_swapi_l3a_pui-he_20260101_v001.json"
         stage_input_file(SWAPI_INTEGRATION_DATA_DIR / dependency_filename)
@@ -242,7 +247,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
                 "--start-date", "20260101",
                 "--version", "v001",
                 "--dependency", dependency_filename,
-            ]
+            ],
+            env={**os.environ, "IMAP_DATA_DIR": str(data_dir)},
         )
 
         self.assertEqual(0, result.returncode)
@@ -273,7 +279,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
 
         root_dir = Path(imap_l3_processing.__file__).parent.parent
         os.chdir(root_dir)
-        imap_data_access.config["DATA_DIR"] = root_dir / "data"
+        data_dir = root_dir / "data"
+        imap_data_access.config["DATA_DIR"] = data_dir
 
         dependency_filename = "imap_swapi_l3b_20260101_v001.json"
         stage_input_file(SWAPI_INTEGRATION_DATA_DIR / dependency_filename)
@@ -293,7 +300,8 @@ class SwapiProcessorIntegration(unittest.TestCase):
                 "--start-date", "20260101",
                 "--version", "v001",
                 "--dependency", dependency_filename,
-            ]
+            ],
+            env={**os.environ, "IMAP_DATA_DIR": str(data_dir)},
         )
 
         self.assertEqual(0, result.returncode)
