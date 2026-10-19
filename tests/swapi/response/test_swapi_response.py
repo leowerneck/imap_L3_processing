@@ -155,7 +155,7 @@ class TestGetResponseGrid(unittest.TestCase):
         self.assertIs(response_grid, response_grid2, "cache miss")
 
         for species, mass_per_charge in [
-            (Species.ALPHA, constants.ALPHA_MASS_PER_CHARGE_M_P_PER_E),
+            (Species.ALPHA, constants.ALPHA_PARTICLE_MASS_PER_CHARGE_M_P_PER_E),
             (Species.HELIUM_PLUS, constants.HE_PUI_PARTICLE_MASS_PER_CHARGE_M_P_PER_E),
         ]:
             response_grid_species = response.get_response_grid(time_as_tt2000, esa_voltage, species)

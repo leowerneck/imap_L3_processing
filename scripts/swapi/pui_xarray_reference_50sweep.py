@@ -257,7 +257,7 @@ if __name__ == "__main__":
     import spiceypy
 
     from imap_l3_processing.constants import (
-        ALPHA_MASS_PER_CHARGE_M_P_PER_E,
+        ALPHA_PARTICLE_MASS_PER_CHARGE_M_P_PER_E,
         ALPHA_PARTICLE_MASS_KG,
         PROTON_MASS_KG,
         PROTON_MASS_PER_CHARGE_M_P_PER_E,
@@ -432,7 +432,7 @@ if __name__ == "__main__":
         central_effective_area_scale=HELIUM_EFFICIENCY_RATIO,
         rotation_matrices=rotation_flat,
         mass_kg=ALPHA_PARTICLE_MASS_KG,
-        mass_per_charge_m_p_per_e=ALPHA_MASS_PER_CHARGE_M_P_PER_E,
+        mass_per_charge_m_p_per_e=ALPHA_PARTICLE_MASS_PER_CHARGE_M_P_PER_E,
     )
     proton_ideal, _ = model_solar_wind_ideal_coincidence_rates(proton_truth, proton_ctx)
     alpha_ideal, _ = model_solar_wind_ideal_coincidence_rates(alpha_truth, alpha_ctx)

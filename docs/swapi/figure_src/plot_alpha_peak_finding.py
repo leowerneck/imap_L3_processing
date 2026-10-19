@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from imap_l3_processing.constants import (
-    ALPHA_MASS_PER_CHARGE_M_P_PER_E,
+    ALPHA_PARTICLE_MASS_PER_CHARGE_M_P_PER_E,
     ALPHA_PARTICLE_MASS_KG,
     ONE_SECOND_IN_NANOSECONDS,
     PROTON_MASS_KG,
@@ -237,7 +237,7 @@ def _plot_case(ax, swapi_response, cdf_path, mag_data, chunk_index):
         central_effective_area_scale=1.0,
         rotation_matrices=rotation_matrices,
         mass_kg=ALPHA_PARTICLE_MASS_KG,
-        mass_per_charge_m_p_per_e=ALPHA_MASS_PER_CHARGE_M_P_PER_E,
+        mass_per_charge_m_p_per_e=ALPHA_PARTICLE_MASS_PER_CHARGE_M_P_PER_E,
     )
     seed = calculate_initial_guess(
         alpha_ctx=alpha_ctx,
